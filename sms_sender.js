@@ -35,7 +35,6 @@ function sendsms() {
         alert("Η διεύθυνση σας περιέχει λάθος.");
         return;
     }
-    alert('sms:13033&body=' + reason + '%20' + name + '%20' + address);
     if (/iphone/i.test(navigator.userAgent.toLowerCase())) {
         location.href = 'sms:13033&body=' + reason + '%20' + name + '%20' + address;
     }
