@@ -25,12 +25,13 @@ function sendsms() {
         return;
     }
 
-    var name = document.getElementById("namein").value.toString();
+    var name = document.getElementById("namein").value.toString().toUpperCase();
+    alert(name);
     if (name.length <= 2 || ( !name.includes(" ")) ) {
         alert("Το ονοματεπώνυμο σας περιέχει λάθος.");
         return;
     }
-    var address = document.getElementById("addressin").value.toString();
+    var address = document.getElementById("addressin").value.toString().toUpperCase();
     if (name.length <= 2 || ( !name.includes(" ")) ) {
         alert("Η διεύθυνση σας περιέχει λάθος.");
         return;
