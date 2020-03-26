@@ -42,7 +42,7 @@ function sendsms(lang) {
         return;
     }
     var address = document.getElementById("addressin").value.toString().toUpperCase();
-    if (name.length <= 2 || ( !name.includes(" ")) ) {
+    if (address.length <= 2 || ( !address.includes(" ")) ) {
         if (lang == 1){
             alert("Η διεύθυνση σας περιέχει λάθος.");
         }
