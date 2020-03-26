@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>
+            COVID-19 GR SMS creator
+        </title>
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body style="font-family: 'Ubuntu', sans-serif; padding: 20px; line-height: 40px;">
+        <nav class="navbar navbar-light bg-secondary justify-content-between" style="color: white;">
+        <a class="navbar-brand" style="color: white;">Covid-19</a>
+        <h5>Έντυπο Βεβαίωσης Μετακίνησης</h5>
+        <form class="form-inline">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Languages
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#" >Greek</a>
+                </div>
+              </div>
+        </form>
+        </nav>
+        <br>
+        <div class="input-group mb-3" style="padding: 5px">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1" style="color: white; background-color: #17A2B8; min-width: 150px;"><b>Ονοματεπώνυμο:</b></span>
+            </div>
+            <input type="text" class="form-control" id="namein" placeholder="ONOMA ΕΠΩΝΥΜΟ" aria-label="Username" aria-describedby="basic-addon1" style="max-width: 500px; text-transform: uppercase;">
+        </div>
+        <div class="input-group mb-3" style="padding: 5px">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1" style="color: white; background-color: #17A2B8; min-width: 150px;"><b>Διεύθυνση:</b></span>
+            </div>
+            <input type="text" class="form-control" id="addressin" placeholder="ΟΔΟΣ ΝΟΥΜΕΡΟ ΠΟΛΗ/ΧΩΡΙΟ" aria-label="Address" aria-describedby="basic-addon1" style="max-width: 500px; text-transform: uppercase;">
+        </div>
+        <b>Αιτία μετακίνησης:</b>
+        <ul style="list-style: none; padding: 10px;">
+            <li><button type="button" id="ch1" onclick="choosereason(1)" class="btn btn-info">Λόγος 1</button> : Mετάβαση σε φαρμακείο ή επίσκεψη στον γιατρό, εφόσον αυτό συνιστάται μετά από σχετική επικοινωνία. </li>
+            <li><button type="button" id="ch2" onclick="choosereason(2)" class="btn btn-info">Λόγος 2</button> : Μετάβαση σε εν λειτουργία κατάστημα προμηθειών αγαθών πρώτης ανάγκης (σούπερ μάρκετ, μίνι μάρκετ), όπου δεν είναι δυνατή η αποστολή τους. </li>
+            <li><button type="button" id="ch3" onclick="choosereason(3)" class="btn btn-info">Λόγος 3</button> : Μετάβαση στην τράπεζα, στο μέτρο που δεν είναι δυνατή η ηλεκτρονική συναλλαγή. </li>
+            <li><button type="button" id="ch4" onclick="choosereason(4)" class="btn btn-info">Λόγος 4</button> : Κίνηση για παροχή βοήθειας σε ανθρώπους που βρίσκονται σε ανάγκη. </li>
+            <li><button type="button" id="ch5" onclick="choosereason(5)" class="btn btn-info">Λόγος 5</button> : Μετάβαση σε τελετή (π.χ. κηδεία, γάμος, βάφτιση) υπό τους όρους που προβλέπει ο νόμος ή μετάβαση διαζευγμένων γονέων ή γονέων που τελούν σε διάσταση που είναι αναγκαία για τη διασφάλιση της επικοινωνίας γονέων και τέκνων, σύμφωνα με τις κείμενες διατάξεις. </li>
+            <li><button type="button" id="ch6" onclick="choosereason(6)" class="btn btn-info">Λόγος 6</button> : Σωματική άσκηση σε εξωτερικό χώρο ή κίνηση με κατοικίδιο ζώο, ατομικά ή ανά δύο άτομα, τηρώντας στην τελευταία αυτή περίπτωση την αναγκαία απόσταση 1,5 μέτρου. </li>
+        </ul>
+
+        <footer class="page-footer font-small blue">
+            <div class="footer-copyright text-center py-3">
+                <button type="button" id="sendsms" onclick="sendsms()" class="btn btn-info">Στείλτε το SMS</button>
+            </div>
+        </footer>
+
+        <script src="sms_sender.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>
